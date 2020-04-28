@@ -2,7 +2,6 @@
 
 <head>
     <title>CODENAMES</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='layout.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
     <br>
     <div class="main_title">
@@ -11,45 +10,50 @@
 </head>
 
 <body>
+    <div class="sub_title" style="color: {{ team }}">
+        {{ team }} TURN
+    </div>
     <br><br><br>
     <div class="content">
-        <table class="center" style="width:80%">
-            <tr>
-                <td><button type="1" name="1">1</button></td>
-                <td><button type="2" name="2">2</button></td>
-                <td><button type="3" name="3">3</button></td>
-                <td><button type="4" name="4">4</button></td>
-                <td><button type="5" name="5">5</button></td>
-            </tr>
-            <tr>    
-                <td><button type="6" name="6">6</button></td>
-                <td><button type="7" name="7">7</button></td>
-                <td><button type="8" name="8">8</button></td>
-                <td><button type="9" name="9">9</button></td>
-                <td><button type="10" name="10">10</button></td>
-            </tr>
-            <tr>
-                <td><button type="11" name="11">11</button></td>
-                <td><button type="12" name="12">12</button></td>
-                <td><button type="13" name="13">13</button></td>
-                <td><button type="14" name="14">14</button></td>
-                <td><button type="15" name="15">15</button></td>
-            </tr>
-            <tr>
-                <td><button type="16" name="16">16</button></td>
-                <td><button type="17" name="17">17</button></td>
-                <td><button type="18" name="18">18</button></td>
-                <td><button type="19" name="19">19</button></td>
-                <td><button type="20" name="20">20</button></td>
-            </tr>
-            <tr>
-                <td><button type="21" name="21">21</button></td>
-                <td><button type="22" name="22">22</button></td>
-                <td><button type="23" name="23">23</button></td>
-                <td><button type="24" name="24">24</button></td>
-                <td><button type="25" name="25">25</button></td>
-            </tr>
-        </table>
+        <form action="/click" method="POST">
+            <table class="center">
+                <tr>
+                    <td><button type="1" name="1">red</button></td>
+                    <td><button type="2" name="2">blue</button></td>
+                    <td><button type="3" name="3">3</button></td>
+                    <td><button type="4" name="4">4</button></td>
+                    <td><button type="5" name="5">5</button></td>
+                </tr>
+                <tr>    
+                    <td><button type="6" name="6">6</button></td>
+                    <td><button type="7" name="7">7</button></td>
+                    <td><button type="8" name="8">8</button></td>
+                    <td><button type="9" name="9">9</button></td>
+                    <td><button type="10" name="10">10</button></td>
+                </tr>
+                <tr>
+                    <td><button type="11" name="11">11</button></td>
+                    <td><button type="12" name="12">12</button></td>
+                    <td><button type="13" name="13">13</button></td>
+                    <td><button type="14" name="14">14</button></td>
+                    <td><button type="15" name="15">15</button></td>
+                </tr>
+                <tr>
+                    <td><button type="16" name="16">16</button></td>
+                    <td><button type="17" name="17">17</button></td>
+                    <td><button type="18" name="18">18</button></td>
+                    <td><button type="19" name="19">19</button></td>
+                    <td><button type="20" name="20">20</button></td>
+                </tr>
+                <tr>
+                    <td><button type="21" name="21">21</button></td>
+                    <td><button type="22" name="22">22</button></td>
+                    <td><button type="23" name="23">23</button></td>
+                    <td><button type="24" name="24">24</button></td>
+                    <td><button type="25" name="25">25</button></td>
+                </tr>
+            </table>
+        </form>
     </div>
 </body>
 

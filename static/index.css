@@ -1,5 +1,28 @@
 body {
+    font-family: Calibri, sans-serif;
+    background-color: black;
+    color: white;
+    padding-bottom: 60px;
     text-align: center;
+}
+
+.main_title {
+    color: white;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.sub_title {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #aaa;
 }
 
 button {
@@ -21,6 +44,9 @@ button:hover{
 }
 
 table {
+    width: 80%;
+    height: 80%;
+    table-layout: fixed;
     border-collapse: collapse;
 }
 
@@ -30,7 +56,5 @@ table.center {
 }
 
 td {
-    height: 40px;
-    width: 50px;
+    height: 80px;
 }
-
