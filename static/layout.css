@@ -1,0 +1,69 @@
+/*Overall layout*/
+html, body {
+    font-family: Calibri, sans-serif;
+    padding: 0;
+    margin: 0;
+    height:100%;
+}
+
+body {
+    background-color: black;
+    color: white;
+    padding-bottom: 60px;
+}
+
+.main_title {
+    color: white;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.sub_title {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #aaa;
+}
+
+.banner {
+    color: white;
+    padding-top: 55px;
+    text-align: center;
+    font-size: 45px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.content red {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgb(205, 102, 102);
+    letter-spacing: 1px;
+    align-items: center;
+}
+
+.content blue {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgb(37, 115, 146);
+    letter-spacing: 1px;
+}
+
+.content gray {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgb(192, 192, 192);
+    letter-spacing: 1px;
+}

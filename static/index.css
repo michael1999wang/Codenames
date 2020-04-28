@@ -1,0 +1,36 @@
+body {
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    border-style: solid;
+    background-color: black;  
+    color: white;
+    border-color: rgb(192, 192, 192);
+}
+
+button:hover{
+    background-color:rgb(192, 192, 192);
+    color: black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+td {
+    height: 40px;
+    width: 50px;
+}
+
