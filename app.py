@@ -5,12 +5,35 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template("index.html", team = "RED")
+    print("index")
+    session['turn'] = "RED"
+    return render_template("index.html", team = session['turn'])
 
-@app.route('/')
+@app.route('/click', methods=['GET', 'POST'])
 def click():
-    pass
+    # Getting the word
+    word = request.form["word"]
+    
+    # Instance of the database
+    db = get_db()
+    db.row_factory = make_dicts
 
+    # Store the correct answer
+    correct = query_db('select color from pairings where word = ?', [word], one=True)
+
+    # Close the database
+    db.close()
+
+    print(correct["color"] == session['turn'])
+
+    # Swap teams if incorrect, otherwise keep going
+    if correct["color"] != session['turn']:
+        if session['turn'] == "RED":
+            session['turn'] = "BLUE"
+        else:
+            session['turn'] == "RED"
+
+    return render_template("index.html", team = session['turn'])
 
 DATABASE = './info.db'
 
