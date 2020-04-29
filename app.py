@@ -1,25 +1,41 @@
 from flask import *
 import sqlite3
+import random
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    print("index")
+    # Red starts
     session['turn'] = "RED"
-    return render_template("index.html", team = session['turn'])
 
-@app.route('/click', methods=['GET', 'POST'])
+    # Read all words into a list
+    lines = open('list.txt').read().splitlines()
+    
+    # Choose words for wordlist
+    chosen = []
+    for i in range (0, 25):
+        randomChoice = random.choice(lines)
+        chosen.append(randomChoice)
+        lines.remove(randomChoice)
+
+    session['wordList'] = chosen
+
+    return render_template("index.html", team = session['turn'], word = session['wordList'])
+
+@app.route('/game', methods=['GET', 'POST'])
 def click():
     # Getting the word
     word = request.form["word"]
-    
+
     # Instance of the database
     db = get_db()
     db.row_factory = make_dicts
 
     # Store the correct answer
     correct = query_db('select color from pairings where word = ?', [word], one=True)
+
+    print(correct)
 
     # Close the database
     db.close()
@@ -31,9 +47,9 @@ def click():
         if session['turn'] == "RED":
             session['turn'] = "BLUE"
         else:
-            session['turn'] == "RED"
+            session['turn'] = "RED"
 
-    return render_template("index.html", team = session['turn'])
+    return render_template("index.html", team = session['turn'], word = session['wordList'])
 
 DATABASE = './info.db'
 
